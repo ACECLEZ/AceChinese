@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script>/*
+	$.get("https://ipinfo.io", function(response) {
+			var ipa = (response.ip);
+            var upa = ipa.toString();
+            if (upa === "BAN LIST HERE"){
+            alert(ipa);
+            window.location.replace("https://glaringsunny.github.io/ez_chinese/");
+            }
+		}, "json")
+		*/
+	</script>
+
+<title>EZ_CHINESE</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-family: "楷体","楷体_GB2312";
+  font-size: 20px;
+}
+
+.content {
+  position: fixed;
+  bottom: 60px;
+  right: 35px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 50%;
+  padding: 20px;
+}
+
+.login {
+  border-radius: 10px;
+  background-color: skyblue;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.submit {
+  border-radius: 25px;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.bgimg {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="content">
+  <h3 align="center">丝绸之路</h3>
+
+  <h5>我们的目标是通过线下为主，线上为主围绕着丝绸之路的主题让同学们增加对丝绸之路的了解与兴趣，还不赶快登录看看。</h5>
+  <h7 align="right">made with <span style="color: red">❤</span> in Singapore</h7>
+  <h6>没有账号？还不赶快联系XXX@gmail.com免费注册！</h6>
+<button class="login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">登录</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" method="get">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>用户名</b></label>
+      <input type="password" placeholder="请在此处输入用户名" name="uname" id="unameInput" required>
+
+      <label for="psw"><b>密码</b></label>
+      <input type="password" placeholder="请在此处输入密码" name="psw" id="pwdInput" required>
+        
+      <button type="submit" onclick="logincheck()">登录</button>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+
+
+    </div>
+  </form>
+</div>
+
+<script>
+
+/*
+function logincheck() {
+    let entereduname = document.getElementById("unameInput").value;
+    let enteredpwd = document.getElementById("pwdInput").value;
+    let combinedInput = String(entereduname) + String(enteredpwd);
+    let securityV1 = String(combinedInput) + String(enteredpwd);
+    if (securityV1 === "sunny123123" || "yunxing123123" || "yunzhi123123" || "harkman123123") {
+    window.location.replace("https://pw-silkroad.w3spaces.com/dashboard.html");
+    alert("correct password");
+    } else {
+    window.location.replace("https://www.gmail.com");
+    alert("incorrect password");
+   }
+}
+*/
+/*LOGIN V1
+function logincheck() {
+    let entereduname = document.getElementById("unameInput").value;
+    let enteredpwd = document.getElementById("pwdInput").value;
+    let combinedInput = String(entereduname) + String(enteredpwd);
+    if (entereduname === "sunny" && enteredpwd === "123") {
+    location.replace("https://pw-silkroad.w3spaces.com/dashboard.html")
+    alert("correct password");
+    } else {
+    window.location.replace("https://www.gmail.com");
+    alert("incorrect password");
+   }
+}
+*/
+
+//if user present variables
+var user1000 = 0
+var user1002 = 0
+var user1003 = 0
+var user1004 = 0
+//end of data storage
+
+function logincheck() {
+    //end of login declaring
+    let entereduname = document.getElementById("unameInput").value;
+    let enteredpwd = document.getElementById("pwdInput").value;
+    let combinedInput = String(entereduname) + String(enteredpwd);
+
+    //user 1000 //Sunny
+    if (combinedInput === "sunny123") {
+    window.location.href = "/dashboard.html";
+    //window.location.replace("https://ez-chinese.000webhostapp.com/dashboard.html");
+    alert("correct password welcome user");
+    } else {
+    //window.location.replace("/index.html");
+    alert("incorrect password");
+   }
+}
+
+var video = document.getElementById("myIMG");
+var modal = document.getElementById('id01');
+
+let bgImage = document.body.style.backgroundImage;
+
+
+let changeBg = function () {
+  let ranNum = Math.floor(Math.random() * 4 + 1);
+  if (ranNum === 1) {
+    document.body.style.backgroundImage = "url('https://i.ibb.co/5LYccRw/homeimage1.jpg')";
+  } else if (ranNum === 2) {
+    document.body.style.backgroundImage = "url('https://i.ibb.co/jrrVtvj/homeimage2.jpg')";
+  } else if (ranNum === 3) {
+    document.body.style.backgroundImage = "url('https://i.ibb.co/GWDftYH/homepageimg3.jpg')";
+  } else if (ranNum === 4) {
+    document.body.style.backgroundImage = "url('https://i.ibb.co/ymC3Hyg/homepageimg4.jpg')";
+  }
+  console.log(ranNum);
+}
+
+window.onload = changeBg();
+window.onload = setInterval(changeBg, 3000);
+
+</script>
+
+</body>
+</html>
