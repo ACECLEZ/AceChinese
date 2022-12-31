@@ -225,6 +225,7 @@ span.psw {
 <script>
 
 /*
+LOGIN V1
 function logincheck() {
     let entereduname = document.getElementById("unameInput").value;
     let enteredpwd = document.getElementById("pwdInput").value;
@@ -239,7 +240,8 @@ function logincheck() {
    }
 }
 */
-/*LOGIN V1
+/*
+LOGIN V2
 function logincheck() {
     let entereduname = document.getElementById("unameInput").value;
     let enteredpwd = document.getElementById("pwdInput").value;
@@ -261,6 +263,7 @@ var user1003 = 0
 var user1004 = 0
 //end of data storage
 /*
+LOGIN V3
 function logincheck() {
     //end of login declaring
     let entereduname = document.getElementById("unameInput").value;
@@ -286,7 +289,7 @@ function logincheck() {
     let enteredpwd = document.getElementById("pwdInput").value;
 
     //user 1000 //Sunny
-    if (entereduname === "sunny" && enteredpwd === "123") {
+    if (entereduname === "sunny" || entereduname === "GIFT-TJNS-TRAIL" && enteredpwd === "123" || enteredpwd === "9DLFMYAZYA") {
     window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
     location.reload();
     } else {
