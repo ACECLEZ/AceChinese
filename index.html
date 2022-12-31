@@ -260,7 +260,7 @@ var user1002 = 0
 var user1003 = 0
 var user1004 = 0
 //end of data storage
-
+/*
 function logincheck() {
     //end of login declaring
     let entereduname = document.getElementById("unameInput").value;
@@ -273,6 +273,22 @@ function logincheck() {
     window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
     location.reload();
     //alert("correct password welcome user");
+    } else {
+    location.reload();
+    alert("incorrect password");
+   }
+}
+*/	
+	
+function logincheck() {
+    //end of login declaring
+    let entereduname = document.getElementById("unameInput").value;
+    let enteredpwd = document.getElementById("pwdInput").value;
+
+    //user 1000 //Sunny
+    if (entereduname === "sunny" && enteredpwd === "123") {
+    window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
+    location.reload();
     } else {
     location.reload();
     alert("incorrect password");
