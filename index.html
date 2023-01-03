@@ -294,12 +294,13 @@ function logincheck() {
     let enteredpwd = document.getElementById("pwdInput").value;
 
     //user 1000 //Sunny
-    if (entereduname === "sunny" || entereduname === "GIFT-TJNS-TRAIL" && enteredpwd === "123" || enteredpwd === "9DLFMYAZYA") {
+    if (entereduname === "sunny" && enteredpwd === "123") {
     window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
     location.reload();
     } else {
     location.reload();
     alert("incorrect password");
+    window.location = "https://aceclez.github.io/AceChinese/";
    }
 }
 
