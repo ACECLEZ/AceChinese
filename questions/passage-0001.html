@@ -1,0 +1,382 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--chinese level selection V2-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.topnav-right {
+  float: right;
+}
+/////////////////
+.logo-left {
+  float: left;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #80b3ff;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #34495E;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+
+.quiz-area {
+     position: fixed;
+     bottom: 1px;
+     right: 1px;
+     height: auto;
+  	 width: 50%;
+}
+
+.submit {
+  background-color: #00e64d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  /*align center*/
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text-area {
+  /*border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  */
+  font-size: 30px;
+}
+
+.credits {
+  font-size: 12px;
+  text-align: center;
+}
+
+.top-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.content-tittle {
+  font-size: 40px;
+}
+
+.c1 {
+  font-size: 20px;
+}
+</style>
+
+
+</head>
+<body onload="openNav()">
+<!-- TOP NAV BAR -->
+<div class="topnav">
+
+<!-- LOGO HERE -->
+<div class="logo-left">
+&nbsp&nbsp
+<a href="https://aceclez.github.io/AceChinese/dashboard.html"><img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" width="70" height="50"></a> 
+</div>
+<!-- END OF LOGO -->
+
+
+<!--<img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" alt="Logo-ace-chinese-V2" border="0">-->
+
+
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a href="https://aceclez.github.io/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a class="active" href="https://pw-silkroad.w3spaces.com/tree.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="https://pw-silkroad.w3spaces.com/homework.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 作业</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="https://aceclez.github.io/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="https://pw-silkroad.w3spaces.com/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<br>
+<br>
+<img src="https://i.ibb.co/JQjyR9K/tn-430942d23-24045-jpg-big.jpg" class="top-image">
+<p class="credits">战争游戏玩家录制的视频，被有心人节录摘取，打上“直播”或“突发新闻”的字样，乍看犹如俄乌战争的现场画面。（法新社）<p>
+
+
+<p class="content-tittle">假游戏画面当俄乌战况散播<p>
+<p class="c1">03.01.2023<br>联合早报<p>
+<br>
+<p class="text-area">
+　　军队在燃烧的街道上冲锋陷阵、导弹击落战斗机、坦克被无人机炸得粉碎……这些几可乱真的电玩画面，被用来散播有关俄乌战争的虚假信息。
+<br><br>
+　　军事模拟游戏《武装突袭3》（Arma 3）因视觉效果逼真，最近几个月一再被用来虚构俄乌战况的视频。这些视频在社交媒体上被当成真实新闻转发，甚至连一些媒体也信以为真。
+<br><br>
+　　学者指出，这样的情况频繁发生，显示在假消息泛滥的时代要愚弄大众是多么容易。
+<br><br>
+　　布朗大学信息未来实验室联合主任沃德尔告诉法新社：“随着电子游戏的视觉效果越来越先进，电脑生成影像（CGI）乍看之下很像真的。人们必须知道如何验证影像，包括查看元数据，才不会犯下这样的错误，特别是新闻媒体。”
+<br><br>
+	玩家上载游戏画面 导致视频被滥用
+<br><br>
+　　《武装突袭3》是捷克游戏开放商波希米亚互动（Bohemia Interactive）的产品，号称能带来真正的战斗体验。在游戏中，玩家可以用飞机、坦尼克等一系列武器，创造各种战斗场景。玩家通常会把长达数小时的游戏画面上载到YouTube等平台，导致这类视频可轻易被滥用。此外，为增加真实感，很多视频还会打上“直播”或“突发新闻”的字样，因此更具误导性。
+<br><br>
+　　去年11月，网上出现一段据称是俄罗斯坦克被美制导弹击中的视频，吸引数万人观看；其实，有关画面取自《武装突袭3》。
+<br><br>
+　　在另一段名为“乌克兰反攻！”的游戏视频底下，一名显然信以为真的网民留言说：“这场战争结束后，我们得要求乌克兰训练北约部队如何作战。”
+<br><br>
+　　此前，《武装突袭3》也被用来制造有关叙利亚及阿富汗等其他武装冲突的假视频。
+<br><br>
+　　波希米亚互动发言人说，公司以游戏的逼真度为荣，但不希望游戏内容被误认为真实战斗场景或用于战争宣传。“我们一直尝试通过向平台供应商举报来打击虚假内容，但效果并不显著。每当一个视频被删除的同时，就有另外10个视频上传。”
+<br><br>
+　　研究员认为，这类假视频的制作手法简单，不太可能是国家行为者（state actors）所为。调查网站Bellingcat的沃特斯说：“我怀疑发布这些内容的人只是网络喷子（trolls），他们只是想看看自己能骗倒多少人。”
+<br><br>
+　　波希米亚互动说，这些假视频在社交媒体用户之间广泛转发，许多人都希望得到更多点赞、转发和留言。除了一般用户，即使一些主流媒体和政府机构也曾上当。
+<br><br>
+　　罗马尼亚电视台去年11月的一个直播节目，就把《武装突袭3》的战斗画面当成乌克兰战争实况，还请来罗马尼亚前防长和前情报首长分析“战况”。
+<br><br>
+　　波希米亚互动敦促玩家负责任地使用游戏画面，避免用不实标题吸引点击，并清楚标示画面取自电子游戏。
+</p>
+  <br><br>
+  
+<button onclick="openWin()" class="submit">开始测验</button>
+
+<script>
+let myWindow;
+
+function openWin() {
+  myWindow = window.open("mcq-0001.html", "", "width=800,height=800");
+}
+
+</script>
+<br>
+<br>
+<br>
+</body>
+</html>
