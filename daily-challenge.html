@@ -1,0 +1,433 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--chinese level selection V2-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.topnav-right {
+  float: right;
+}
+/////////////////
+.logo-left {
+  float: left;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #80b3ff;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #34495E;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+
+.quiz-area {
+  bottom: 1px;
+  margin: auto;
+  width: 50%;
+}
+</style>
+
+
+</head>
+<body onload="openNav()">
+<!-- TOP NAV BAR -->
+<div class="topnav">
+
+<!-- LOGO HERE -->
+<div class="logo-left">
+&nbsp&nbsp
+<a href="https://aceclez.github.io/AceChinese/dashboard.html"><img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" width="70" height="50"></a> 
+</div>
+<!-- END OF LOGO -->
+
+
+<!--<img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" alt="Logo-ace-chinese-V2" border="0">-->
+
+
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a href="https://aceclez.github.io/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a class="active" href="https://pw-silkroad.w3spaces.com/tree.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="https://aceclez.github.io/AceChinese/daily-challenge.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 作业</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="https://aceclez.github.io/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="https://pw-silkroad.w3spaces.com/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<div class="quiz-area">
+  <div class="container clearfix"></div>
+  <header>
+  <div class="wrapper">
+    <div id="quiz">
+      <br>
+
+      <p class="questions"></p>
+      
+      <div class="answers"></div>         
+      
+      <div class="checkAnswers">
+<h3>测试结果</h3>
+        <div class="checker">
+
+  </header>
+  </div>
+  
+<!-- delaration of variables-->
+<script>
+window.onload = function () {
+  
+var questionArea = document.getElementsByClassName('questions')[0],
+	answerArea   = document.getElementsByClassName('answers')[0],
+	checker      = document.getElementsByClassName('checker')[0],
+	current      = 0,
+	score		   = 0,
+  
+//questions and options to be stored here
+allQuestions = {
+//set answer at the last number 
+//0=option1
+//1=option2
+//2=option3
+//3=option4
+//sample question
+'古人说,________,我们就是要善于运用计谋来战胜敌人。' : ['兵不厌诈', '班门弄斧', '百年树人', '半途而废',0],
+//question break
+'大明深爱着小花,________,对小花的家人也关怀备至。' : ['不二法门', '悲天悯人','爱屋及乌','不自量力',2],
+//question break   
+'俊熹才华出众,在学校各项比赛中,获得的奖项多得________。' : ['不劳而获', '闭门造车','杯弓蛇影','不胜枚举',3],
+//question break
+'这点钱对解决你的困难来说,犹如________,但总能略解燃眉之急,你就先收下吧。' : ['不自量力', '不自量力','不翼而飞','杯水车薪',3],
+};
+
+//load question in question area   
+function loadQuestion(curr) {
+
+var question = Object.keys(allQuestions)[curr];
+    questionArea.innerHTML = '';
+    questionArea.innerHTML = question;    
+    }
+
+//loads answers in answer area
+function loadAnswers(curr) {
+
+var answers = allQuestions[Object.keys(allQuestions)[curr]];
+    answerArea.innerHTML = '';
+
+//display colour for answer check (red for wrong and green for correct)
+for (var i = 0; i < answers.length -1; i += 1) {
+var createDiv = document.createElement('div'),
+	text = document.createTextNode(answers[i]);
+      
+		createDiv.appendChild(text);      
+		createDiv.addEventListener("click", checkAnswer(i, answers));
+
+		answerArea.appendChild(createDiv);
+    }
+  }
+  
+//check answer
+function checkAnswer(i, arr) {
+    
+return function () {
+	var givenAnswer = i,
+	correctAnswer = arr[arr.length-1];
+
+if (givenAnswer === correctAnswer) {
+	addChecker(true);             
+} else {
+	addChecker(false);                        
+	}
+    
+//explaination of answers in each question
+var popupstore = 
+'<h2>答案解析</h2>'                                        +
+'<h4>第一题： first explaination to be written here</h4>'  +
+'<h4>第二题： second explaination to be written here</h4>' +
+'<h4>第三题： third explaination to be written here</h4>'  +
+'<h4>第四题： fourth explaination to be written here</h4>' +
+'<h4>请在IG OUR ACCOUNT NAME或者<a class="ig" href="www.instagram.com">点击这里</a>支持我们，参与更多有趣的活动</h4>'                     ;
+          
+//provide different remarks for differnet score
+if (score < 26) {
+	var greetings = "加油!再接再厉!"
+	}  else if (25 < score && score < 51) {
+	var greetings = "真不错，还可以继续加油哟！"
+	} else if (50 < score && score < 76){
+	var greetings = "真棒！继续努力，满分距你一步之遥！"
+	} else {
+	var greetings = "神一般的存在！在下佩服！"
+	}
+
+      if (current < Object.keys(allQuestions).length -1) {
+        current += 1;
+        
+        loadQuestion(current);
+        loadAnswers(current);
+      } else {
+      var declarescore = `总分:${score}/100 ${greetings}`;
+      questionArea.innerHTML = declarescore
+        answerArea.innerHTML = popupstore;
+      }
+                              
+    };
+  }
+  
+    function addChecker(bool) {
+
+    var createDiv = document.createElement('div'),
+        txt       = document.createTextNode(current + 1);
+    
+    createDiv.appendChild(txt);
+    
+    if (bool) {
+      
+      createDiv.className += 'correct';
+      checker.appendChild(createDiv);
+      score += 25;
+
+    } else {
+      createDiv.className += 'false';
+      checker.appendChild(createDiv);
+      score += 0;
+
+    }
+  }
+      
+
+  
+  loadQuestion(current);
+  loadAnswers(current);
+  
+};
+
+</script>
+
+
+
+
+<br>
+<br>
+<br>
+</body>
+</html>
