@@ -10,6 +10,12 @@ function logincheck() {
 	    alert("incorrect password");
 	    window.close();
    }
+	
+    if (entereduname === "" && enteredpwd === "") {
+	    window.open("https://aceclez.github.io/AceChinese/");
+	    alert("incorrect password");
+	    window.close();
+    }	
 }
 
 /*
