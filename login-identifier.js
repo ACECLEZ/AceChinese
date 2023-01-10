@@ -2,7 +2,7 @@ function logincheck() {
     let entereduname = document.getElementById("unameInput").value;
     let enteredpwd = document.getElementById("pwdInput").value;
   
-    if (entereduname === "sunny" && enteredpwd === "123") {
+    if (entereduname === "sunny" ||  entereduname === "TJNS-GIFT-TRIAL" && enteredpwd === "123" || enteredpwd === "GIFT-JAN") {
     window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
     location.reload();
     } else {
