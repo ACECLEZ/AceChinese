@@ -4,7 +4,7 @@ function logincheck() {
   
     if (//usernames
 	entereduname === "sunny" ||  
-	entereduname === "HCI-2023" 
+	entereduname === "HCI2023" 
 	&& 
 	//passwords
 	enteredpwd === "123" || 
