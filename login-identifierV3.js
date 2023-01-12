@@ -15,7 +15,7 @@ function change(){
   }
   function login(){
   window.open("https://aceclez.github.io/AceChinese/dashboard.html");
-  //window.close();
+  window.close();
   }
   var x = document.querySelector(".username").value;
   var y = document.querySelector(".password").value;
