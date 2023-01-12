@@ -19,4 +19,4 @@
 12/1/2023     Updated login-identifyerV3
 12/1/2023     Modified login page
 12/1/2023     Reduced lag when login
-12/1/2023     Prevent inspect of index to pretect passwords
+12/1/2023     Prevent inspect of index to protect passwords
