@@ -15,6 +15,7 @@
 3/1/2023      Created music
 3/1/2023      Updated login-identifierV1
 7/1/2023      Updated login-identifyerV2
+8/12/2023     Added tittle and logo to all pages
 12/1/2023     Updated login-identifyerV3
 12/1/2023     Modified login page
 12/1/2023     Reduced lag when login
