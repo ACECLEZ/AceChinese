@@ -28,7 +28,7 @@ function change(){
           }
           else{
               	window.open("https://aceclez.github.io/AceChinese/");
-	    		alert("incorrect password");
+	    		//alert("incorrect password");
 	    		window.close();
      }
         
