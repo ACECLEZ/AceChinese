@@ -1,0 +1,186 @@
+<html>
+ <!-- Created By Tiyam Foyraz . 2017 -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login Form</title>
+<style>
+body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: url("https://i.pinimg.com/originals/8b/a8/19/8ba819100838b2c39ef496deef6ad633.jpg") no-repeat center fixed;
+            background-size: cover;
+            transition: 2s;
+        }
+        
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.47);
+        }
+/*profile image style*/
+        .profile-image{
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            margin: -25px auto;
+        }      
+        
+      img{
+            width: 100%;
+         }
+/*end of profile image style*/
+      /*pop-up window*/
+       #pop-up{
+         background: skyblue;
+         font-weight: bold;
+         width: 30%;
+         position: relative;
+         top: 25%;
+         margin: 0 auto;
+         text-align: center;
+         border-radius: 0 16px 0 16px;
+         padding: 3%;
+         font-family: monospace;
+         font-size: 18px;
+         display: none;
+         vertical-align: middle;
+         animation: move 2s infinite;
+         box-shadow: 4px 5px 15px #363636;
+        }
+        
+        @keyframes move{
+            0%{transform: translateY(6%);}
+            50%{transform: translateY(-6%);}
+            100%{transform: translateY(6%);}
+        }
+/*form section style*/
+        #form-section{
+            width: 280px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: rgba(137, 137, 137, 0.62);
+            border-radius: 8px;
+            box-shadow: 6px 5px 35px black;
+        }
+        
+        #form-section .form-container{
+            width: 79%;
+            margin: 70px auto;
+        }
+        
+        #form-section .form-container p{
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        #form-section .form-container a{
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        #form-section .form-container a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .form-input{
+            display: block;
+            margin: 5% auto;
+            padding: 6% 6%;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 4px 5px 15px #363636;
+        }
+        
+        .form-button{
+            margin-left: 70px;
+            margin-top: 60px;
+            padding: 10px 15px;
+            background: #248e75;
+            border-radius: 3px;
+            border: 1px solid #248e75;
+            color: #efefef;
+            font-weight: bold;
+            font-size: 13px;
+            font-family: sans-serif;
+            transition: color .5s , background .5s;
+            box-shadow: 6px 5px 16px #363636;
+        }
+        
+        .form-button:hover{
+            background: #efefef;
+            color: #248e75;
+            border: 1px solid #248e75;
+            cursor: pointer;
+        }      
+/* end of form section style */
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- On-click popup window -->
+        <div id="pop-up"></div>
+      <div id="form-section">
+    <!-- form section -->
+        <form>
+         <!-- profile icon section -->
+       <div class="profile-image">
+           <img src="https://lh3.googleusercontent.com/zDAzmBqlc9ytAalLcnv23dozCWc00mJAIGI7tJsOIHVir54UdhtYMgTThG4MdtSyRZ__epdUE3K2Yyhb3d9meCO4mmXTm3FzF9lj9rR8hG57sAhg3yuukhZbpQz6ZrW5yf7Op8BZzJz4eEeIbZkE0bWEY0fcczvpE0I3HsGu2V8QqscGfygNvapGQOP8Qp8lyZ8BnmxZkgRcMvQzaIeSNeNrMhMOJq67lU31Tn2LJIcs4ypAcWwM7jP_9zX-JPttUAUa-CvCPQBAfsXYjvqN0orsTuqIaThjTy_4-eV4A4ZjKP5qM1lUAzeSf9Hszyz7h3PEbM9cztGWkLMmLgD14el0PaaQa7kbEyTG0LPfI9TlK_wcS0bsTWRgSHDudQRxnM0JQhucpaC8emg7DT_0QODgqgcQ7fxXW4ZAjmnyy61wB_Kl8L1QHDKXpZgsEemu7-6nRde1R773XfcUab333baPRiagGSdfFHFWbiwM-PEV5H0OGHRR4gxQ3tYGBTSGNZCeUiTNJzz4xxk59zL-NjotCf_gOFptnBPpGrFrTJfyoc8By4Y0tDCoxcyFbvUX4xwd4C-B_de-2w7PAokk1ERAoiAHlL3b=s256-no" alt="user-icon">
+       </div>
+        
+       <div class="form-container">
+             <input type="text" name="username" placeholder="Username" class="form-input username">
+             <input type="password" name="password" placeholder="Password" class="form-input password">
+             
+    <!-- submit button section -->
+      <input onClick="change()" type="button" class="form-button" value="SUBMIT">
+             
+      </div> 
+        </form>
+       </div>
+    </div>
+    
+    
+    
+    <script>function change(){
+  
+  function popup(){
+
+     document.querySelector("#form-section").style.display = "none";
+ document.querySelector("#pop-up").style.display = "block";
+  
+  document.querySelector("body").style.background = "url('https://s-media-cache-ak0.pinimg.com/originals/a3/03/d0/a303d0d7d53ccb6f87cd36fd788d925e.jpg')";
+  
+  document.querySelector("body").style.backgroundRepeat = "no-repeat";
+  document.querySelector("body").style.backgroundSize = "cover";
+  
+  var x = document.querySelector(".username").value;
+   document.querySelector("#pop-up").innerHTML = "Hello <i>" + x + "</i>.<br>Hope you're having an amazing day!";
+   window.location"https://aceclez.github.io/AceChinese/dashboard.html";
+location.reload();
+
+
+  }
+  var x = document.querySelector(".username").value;
+  var y = document.querySelector(".password").value;
+           
+
+          if(x=="sunny" && y=="123"){
+          		popup();
+                //window.location"https://aceclez.github.io/AceChinese/dashboard.html";
+    			//location.reload();
+          }
+          else{
+              	    window.open("https://aceclez.github.io/AceChinese/");
+	    alert("incorrect password");
+	    window.close();
+     }
+        
+}</script>
+</body>
+</html>
