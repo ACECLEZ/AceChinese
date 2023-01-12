@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Login Form</title>
 <style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 body {
             margin: 0;
             padding: 0;
@@ -117,6 +118,10 @@ body {
             border: 1px solid #248e75;
             cursor: pointer;
         }      
+        .tnc { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+        a{
+  color: #66b3ff;
+}
 /* end of form section style */
 </style>
 </head>
@@ -127,6 +132,10 @@ body {
         <div id="pop-up"></div>
       <div id="form-section">
     <!-- form section -->
+  <h1 class="tnc">AceChinese</h1>
+  
+  
+<h3 class="tnc">请在登录前<strong>仔细</strong>阅读<a href="https://aceclez.github.io/AceChinese/user-policy.html" target="_blank">用户条款</a></h3>
         <form>
        <div class="form-container">
              <input type="text" name="username" placeholder="Username" class="form-input username">
@@ -159,7 +168,7 @@ body {
   }
   function login(){
   window.open("https://aceclez.github.io/AceChinese/dashboard.html");
-  window.close();
+  //window.close();
   }
   var x = document.querySelector(".username").value;
   var y = document.querySelector(".password").value;
@@ -167,7 +176,7 @@ body {
 
           if(x=="sunny" && y=="123"){
           		popup();
-                setTimeout(login, 2500);
+                setTimeout(login, 2000);
           }
           else{
               	window.open("https://aceclez.github.io/AceChinese/");
