@@ -145,7 +145,7 @@ body {
     <script>function change(){
   
   function popup(){
-
+                  const myTimeout = setTimeout(login, 50000);
      document.querySelector("#form-section").style.display = "none";
  document.querySelector("#pop-up").style.display = "block";
   
@@ -155,7 +155,11 @@ body {
   document.querySelector("body").style.backgroundSize = "cover";
   
   var x = document.querySelector(".username").value;
-   document.querySelector("#pop-up").innerHTML = "Hello <i>" + x + "</i>.<br>Hope you're having an amazing day!";
+   document.querySelector("#pop-up").innerHTML = "欢迎<i>" + x + "</i><br>又是元气满满的一天，加油！";
+  }
+  function login(){
+  window.open("https://aceclez.github.io/AceChinese/dashboard.html");
+  window.close();
   }
   var x = document.querySelector(".username").value;
   var y = document.querySelector(".password").value;
@@ -163,13 +167,12 @@ body {
 
           if(x=="sunny" && y=="123"){
           		popup();
-                window.open("https://aceclez.github.io/AceChinese/dashboard.html");
-                window.close();
+                setTimeout(login, 2500);
           }
           else{
-              	    window.open("https://aceclez.github.io/AceChinese/");
-	    alert("incorrect password");
-	    window.close();
+              	window.open("https://aceclez.github.io/AceChinese/");
+	    		alert("incorrect password");
+	    		window.close();
      }
         
 }</script>
