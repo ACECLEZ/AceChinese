@@ -128,11 +128,6 @@ body {
       <div id="form-section">
     <!-- form section -->
         <form>
-         <!-- profile icon section -->
-       <div class="profile-image">
-           <img src="https://lh3.googleusercontent.com/zDAzmBqlc9ytAalLcnv23dozCWc00mJAIGI7tJsOIHVir54UdhtYMgTThG4MdtSyRZ__epdUE3K2Yyhb3d9meCO4mmXTm3FzF9lj9rR8hG57sAhg3yuukhZbpQz6ZrW5yf7Op8BZzJz4eEeIbZkE0bWEY0fcczvpE0I3HsGu2V8QqscGfygNvapGQOP8Qp8lyZ8BnmxZkgRcMvQzaIeSNeNrMhMOJq67lU31Tn2LJIcs4ypAcWwM7jP_9zX-JPttUAUa-CvCPQBAfsXYjvqN0orsTuqIaThjTy_4-eV4A4ZjKP5qM1lUAzeSf9Hszyz7h3PEbM9cztGWkLMmLgD14el0PaaQa7kbEyTG0LPfI9TlK_wcS0bsTWRgSHDudQRxnM0JQhucpaC8emg7DT_0QODgqgcQ7fxXW4ZAjmnyy61wB_Kl8L1QHDKXpZgsEemu7-6nRde1R773XfcUab333baPRiagGSdfFHFWbiwM-PEV5H0OGHRR4gxQ3tYGBTSGNZCeUiTNJzz4xxk59zL-NjotCf_gOFptnBPpGrFrTJfyoc8By4Y0tDCoxcyFbvUX4xwd4C-B_de-2w7PAokk1ERAoiAHlL3b=s256-no" alt="user-icon">
-       </div>
-        
        <div class="form-container">
              <input type="text" name="username" placeholder="Username" class="form-input username">
              <input type="password" name="password" placeholder="Password" class="form-input password">
@@ -161,10 +156,6 @@ body {
   
   var x = document.querySelector(".username").value;
    document.querySelector("#pop-up").innerHTML = "Hello <i>" + x + "</i>.<br>Hope you're having an amazing day!";
-   window.location"https://aceclez.github.io/AceChinese/dashboard.html";
-location.reload();
-
-
   }
   var x = document.querySelector(".username").value;
   var y = document.querySelector(".password").value;
@@ -172,8 +163,8 @@ location.reload();
 
           if(x=="sunny" && y=="123"){
           		popup();
-                //window.location"https://aceclez.github.io/AceChinese/dashboard.html";
-    			//location.reload();
+                window.open("https://aceclez.github.io/AceChinese/dashboard.html");
+                window.close();
           }
           else{
               	    window.open("https://aceclez.github.io/AceChinese/");
