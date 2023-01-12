@@ -14,10 +14,9 @@ function change(){
    document.querySelector("#pop-up").innerHTML = "欢迎<i>" + x + "</i><br>又是元气满满的一天，加油！";
   }
   function login(){
-  //window.open("https://aceclez.github.io/AceChinese/dashboard.html");
-  //window.close();
-	window.location = "https://aceclez.github.io/AceChinese/dashboard.html";
-    location.reload();
+  window.open("https://aceclez.github.io/AceChinese/dashboard.html");
+  location.reload();
+  window.close();
   }
   var x = document.querySelector(".username").value;
   var y = document.querySelector(".password").value;
