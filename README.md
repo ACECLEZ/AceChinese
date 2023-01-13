@@ -20,3 +20,5 @@
 12/1/2023     Modified login page
 12/1/2023     Reduced lag when login
 12/1/2023     Prevent inspect of index to protect passwords
+13/1/2023     Created news section and completed first example
+13/1/2023     Updated to login-identifierV4.js with encrypted codes
