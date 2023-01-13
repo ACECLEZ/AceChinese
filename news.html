@@ -1,0 +1,322 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--chinese level selection V2-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+	
+<title>AceChinese</title>										<!--TO BE UPDATED IN EVERY PAGE-->
+<!-- add icon link -->										        <!--TO BE UPDATED IN EVERY PAGE-->
+<link rel = "icon" href = "https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" type = "image/x-icon">	<!--TO BE UPDATED IN EVERY PAGE-->
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.topnav-right {
+  float: right;
+}
+/////////////////
+.logo-left {
+  float: left;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #80b3ff;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #34495E;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+
+.quiz-area {
+  bottom: 1px;
+  margin: auto;
+  width: 50%;
+}
+</style>
+
+
+</head>
+<body onload="openNav()">
+<!-- TOP NAV BAR -->
+<div class="topnav">
+
+<!-- LOGO HERE -->
+<div class="logo-left">
+&nbsp&nbsp
+<a href="https://aceclez.github.io/AceChinese/dashboard.html"><img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" width="70" height="50"></a> 
+</div>
+<!-- END OF LOGO -->
+
+
+<!--<img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" alt="Logo-ace-chinese-V2" border="0">-->
+
+
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a href="https://aceclez.github.io/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a class="active" href="https://aceclez.github.io/AceChinese/level-selection.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="https://aceclez.github.io/AceChinese/daily-challenge.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 每日挑战</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="https://aceclez.github.io/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="https://pw-silkroad.w3spaces.com/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<br><br><br>
+    
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /*background-color: #2196F3;*/
+  padding: 1px;
+}
+.grid-item {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 8px;
+  font-size: 8px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<br><br><br><br>
+<div class="grid-container">
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>  
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>  
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>  
+  <div class="grid-item"><a href="/AceChinese/news/set001/passage001.html" target="_blank"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></div>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+</body>
+</html>
