@@ -1,0 +1,388 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--chinese level selection V2-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.topnav-right {
+  float: right;
+}
+/////////////////
+.logo-left {
+  float: left;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #ffd9b3;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #34495E;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+
+.quiz-area {
+     position: fixed;
+     bottom: 1px;
+     right: 1px;
+     height: auto;
+  	 width: 50%;
+}
+
+.submit {
+  background-color: #00e64d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  /*align center*/
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text-area {
+  /*border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  */
+  font-size: 30px;
+}
+
+.credits {
+  font-size: 12px;
+  text-align: center;
+}
+
+.top-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.content-tittle {
+  font-size: 40px;
+}
+
+.c1 {
+  font-size: 20px;
+}
+
+.sidespace{
+  padding:120px;
+  background-color: #ffddcc;
+}
+</style>
+
+
+</head>
+<body onload="openNav()">
+<!-- TOP NAV BAR -->
+<div class="topnav">
+
+<!-- LOGO HERE -->
+<div class="logo-left">
+&nbsp&nbsp
+<a href="https://aceclez.github.io/AceChinese/dashboard.html"><img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" width="70" height="50"></a> 
+</div>
+<!-- END OF LOGO -->
+
+
+<!--<img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" alt="Logo-ace-chinese-V2" border="0">-->
+
+
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a href="https://aceclez.github.io/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a href="https://pw-silkroad.w3spaces.com/tree.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="https://pw-silkroad.w3spaces.com/homework.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 作业</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="https://aceclez.github.io/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="https://pw-silkroad.w3spaces.com/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<br>
+<br>
+<div class="sidespace">
+<img src="https://i.ibb.co/LgBM6bC/tn-8133dd431-24196-jpg-big.jpg" class="top-image">
+<p class="credits">少女把本地包包当奢侈品遭嘲笑
+联合早报（Tiktok截图 zohtaco）<p>
+
+
+
+
+<p class="content-tittle">少女把本地包包当奢侈品遭嘲笑<p>
+<p class="c1">14.01.2023<br>联合早报<p>
+<br>
+<p class="text-area">
+　　17岁少女把80元的本地品牌包当奢侈品遭嘲笑，在坊间引发热议，少女网上回应家境不富裕因此很珍惜，总理夫人何晶也打气声援：父母的礼物是无价之宝。
+<br><br>
+　　这名17岁少女佐伊（Zoe Gabriel）日前在TikTok上载了父亲送她本地品牌Charles & Keith的托特包，让她非常兴奋拍摄短视频分享喜悦，并在影像中写道这是她人生第一个奢侈品牌包包（luxury bag）。
+<br><br>
+　　不料，就有好些网民在视频留言“酸”她不知道什么才算是奢侈名牌包，认为应该有人点醒少女哪些牌子才称得上。
+<br><br>
+　　佐伊对于一些网民这样的留言感到难过，隔天就录制视频回击，哽咽道出自己的家庭背景，以及为何爸爸送上一个售价80元的Charles & Keith托特包对她来说已经意义非凡。
+<br><br>
+　　佐伊在视频中说，要公开谈及她的经济状况不是简单的事，因为家境不太好，很多时候看起来习以为常的日常消费，他们一家都得三思而行。
+<br><br>
+　　2010年从菲律宾搬到新加坡的佐伊举例，初期来到狮城时，包括到面包物语（BreadTalk）买面包都只能偶尔这么做。逛街经过许多商店看到心仪的物品想买，父母都会说“改天”或是“下次”，但这些“改天下次”都没有实现。
+<br><br>
+　　她指出，那些暗讽的留言突显这些人因为富裕让他们变得多么无知。
+<br><br>
+　　“80元的包包对你而言也许不是奢侈品，可是对我和我的家人来说是。爸爸努力工作赚钱来送我一个这样的包包，我非常感激。我没想到一个让我雀跃不已的包包，却招惹来这样的嘲弄。”
+<br><br>
+　　何晶在看到网络新闻报道此事后也转发，并写道：“父母送的礼物是无价之宝。为佐伊和家人送上满满的爱与拥抱。对了，别忘了这个包包承载着无穷无尽的爱。”
+<br><br>
+　　Charles and Keith的创办人是黄文华（Charles Wong）和黄文杰（Keith Wong）两兄弟，品牌已邀请佐伊和父亲与创办人会面吃午餐。
+<br><br>
+　　品牌发言人回复《新明日报》询问时表示，佐伊面对网民攻击时展现了气度与智慧，是非常成熟的表现，让品牌非常赞赏。佐伊的父母也一定为女儿的表现感到骄傲。
+<br><br>
+　　事件引起不少议论，大批网民纷纷支持佐伊和本地品牌，认为应该为这个已经走上世界舞台的本地原创品牌喝彩，不应该看不起。对此，品牌发言人也非常感谢大众的支持与鼓励。
+</p>
+</div>
+  <br><br>
+  
+<button onclick="openWin()" class="submit">开始测验</button>
+
+<script>
+let myWindow;
+
+function openWin() {
+  myWindow = window.open("/AceChinese/news/set001/question002.html", "", "width=800,height=800");
+}
+
+</script>
+<br>
+<br>
+<br>
+</body>
+</html>
