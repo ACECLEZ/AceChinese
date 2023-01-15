@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!--====== Declaration =====-->
+  <!--====== Approx 85% of the code is written by Sunny =====-->
+  <!--====== Approx 15% of the code is sourced from free open sources =====-->
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #b3d9ff;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #ffcccc;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+  
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container clearfix"></div>
+  <header>
+  <div class="wrapper">
+    <div id="quiz">
+      <h1>阅读练习</h1>
+
+      <p class="questions"></p>
+      
+      <div class="answers"></div>         
+      
+      <div class="checkAnswers">
+<h3>测试结果</h3>
+        <div class="checker">
+
+  </header>
+  
+<!-- delaration of variables-->
+<script>
+window.onload = function () {
+  
+var questionArea = document.getElementsByClassName('questions')[0],
+	answerArea   = document.getElementsByClassName('answers')[0],
+	checker      = document.getElementsByClassName('checker')[0],
+	current      = 0,
+	score		   = 0,
+  
+//questions and options to be stored here
+allQuestions = {
+//set answer at the last number 
+//0=option1
+//1=option2
+//2=option3
+//3=option4
+//sample question
+'佐伊向大家分享自己第一个奢侈品牌包包后，大家的第一反应是？' : ['网民纷纷称赞包包很好看', '网民认为她的气质与包包不搭', '网民认为她不知道什么才算是奢侈名牌包', '网民也想买与她一样的包',2],
+//question break
+'你认为父母送的礼物是不是物价之宝？' : ['是', '否',0],
+//question break
+'佐伊的包包价值多少？' : ['300元', '1400元','10元','80元',3],
+//question break   
+'佐伊每次见到心仪的物品以下哪项不是父母的反应？' : ['改天', '下次','买吧',2],
+};
+
+//load question in question area   
+function loadQuestion(curr) {
+
+var question = Object.keys(allQuestions)[curr];
+    questionArea.innerHTML = '';
+    questionArea.innerHTML = question;    
+    }
+
+//loads answers in answer area
+function loadAnswers(curr) {
+
+var answers = allQuestions[Object.keys(allQuestions)[curr]];
+    answerArea.innerHTML = '';
+
+//display colour for answer check (red for wrong and green for correct)
+for (var i = 0; i < answers.length -1; i += 1) {
+var createDiv = document.createElement('div'),
+	text = document.createTextNode(answers[i]);
+      
+		createDiv.appendChild(text);      
+		createDiv.addEventListener("click", checkAnswer(i, answers));
+
+		answerArea.appendChild(createDiv);
+    }
+  }
+  
+//check answer
+function checkAnswer(i, arr) {
+    
+return function () {
+	var givenAnswer = i,
+	correctAnswer = arr[arr.length-1];
+
+if (givenAnswer === correctAnswer) {
+	addChecker(true);             
+} else {
+	addChecker(false);                        
+	}
+    
+//explaination of answers in each question
+var popupstore = 
+'<h2>答案解析</h2>'                                        +
+'<h4>第一题： 好些网民在视频留言“酸”她不知道什么才算是奢侈名牌包，认为应该有人点醒少女哪些牌子才称得上。</h4>'  
+ +
+'<h4>第二题： 何晶在看到网络新闻报道此事后也转发，并写道：“父母送的礼物是无价之宝。</h4>' 
+ +
+'<h4>第三题： 爸爸送上一个售价80元的Charles & Keith托特包对她来说已经意义非凡。</h4>'  +
+
+'<h4>第四题： 逛街经过许多商店看到心仪的物品想买，父母都会说“改天”或是“下次”，但这些“改天下次”都没有实现。</h4>'; /*+
+'<h4>请在IG OUR ACCOUNT NAME或者<a class="ig" href="www.instagram.com">点击这里</a>支持我们，参与更多有趣的活动</h4>'                    ;*///not needed as of now
+          
+//provide different remarks for differnet score
+if (score < 26) {
+	var greetings = "加油!再接再厉!"
+	}  else if (25 < score && score < 51) {
+	var greetings = "真不错，还可以继续加油哟！"
+	} else if (50 < score && score < 76){
+	var greetings = "真棒！继续努力，满分距你一步之遥！"
+	} else {
+	var greetings = "神一般的存在！在下佩服！"
+	}
+
+      if (current < Object.keys(allQuestions).length -1) {
+        current += 1;
+        
+        loadQuestion(current);
+        loadAnswers(current);
+      } else {
+      var declarescore = `总分:${score}/100 ${greetings}`;
+      questionArea.innerHTML = declarescore
+        answerArea.innerHTML = popupstore;
+      }
+                              
+    };
+  }
+  
+    function addChecker(bool) {
+
+    var createDiv = document.createElement('div'),
+        txt       = document.createTextNode(current + 1);
+    
+    createDiv.appendChild(txt);
+    
+    if (bool) {
+      
+      createDiv.className += 'correct';
+      checker.appendChild(createDiv);
+      score += 25;
+
+    } else {
+      createDiv.className += 'false';
+      checker.appendChild(createDiv);
+      score += 0;
+
+    }
+  }
+      
+
+  
+  loadQuestion(current);
+  loadAnswers(current);
+  
+};
+
+</script>
+
+<br>
+<br>
+
+
+</body>
+
+</html>
