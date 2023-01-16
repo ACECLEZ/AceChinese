@@ -1,0 +1,412 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aceclez.github.io/AceChinese/remove-inspect.js"></script>				<!--PREVENT INSPECT-->
+<title>AceChinese</title>										<!--TO BE UPDATED IN EVERY PAGE-->
+<!-- add icon link -->										        <!--TO BE UPDATED IN EVERY PAGE-->
+<link rel = "icon" href = "https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" type = "image/x-icon">	
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--chinese level selection V2-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.topnav-right {
+  float: right;
+}
+/////////////////
+.logo-left {
+  float: left;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #ffd9b3;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #34495E;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+
+.quiz-area {
+     position: fixed;
+     bottom: 1px;
+     right: 1px;
+     height: auto;
+  	 width: 50%;
+}
+
+.submit {
+  background-color: #00e64d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  /*align center*/
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text-area {
+  /*border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  */
+  font-size: 30px;
+}
+
+.credits {
+  font-size: 12px;
+  text-align: center;
+}
+
+.top-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.content-tittle {
+  font-size: 40px;
+}
+
+.c1 {
+  font-size: 20px;
+}
+
+.sidespace{
+  padding:120px;
+  background-color: #ffddcc;
+}
+</style>
+
+
+</head>
+<body onload="openNav()">
+<!-- TOP NAV BAR -->
+<div class="topnav">
+
+<!-- LOGO HERE -->
+<div class="logo-left">
+&nbsp&nbsp
+<a href="https://aceclez.github.io/AceChinese/dashboard.html"><img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" width="70" height="50"></a> 
+</div>
+<!-- END OF LOGO -->
+
+
+<!--<img src="https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" alt="Logo-ace-chinese-V2" border="0">-->
+
+
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a href="https://aceclez.github.io/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a href="https://pw-silkroad.w3spaces.com/tree.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="https://pw-silkroad.w3spaces.com/homework.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 作业</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="https://aceclez.github.io/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="https://pw-silkroad.w3spaces.com/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<br>
+<br>
+<div class="sidespace">
+<img src="https://i.ibb.co/1sVw4Ws/tn-0e93c22ed-24187-png-big.jpg" class="top-image">
+<p class="credits">现场的“幸福比比兔”装置洋溢着春节气氛。
+（取自孙中山南洋纪念馆脸书）<p>
+
+
+
+
+<p class="content-tittle">公送虎迎兔 农历新年拍照打卡好去处<p>
+<p class="c1">11.01.2023<br>联合早报<p>
+<br>
+<p class="text-area">
+　　在一片祥和喜气的氛围之中，大家即将送走虎年，迎来兔年。去哪里能感受到满满的兔年佳节气息呢？
+<br><br>
+1. 晚晴园“2023春满人间聚晚晴”
+<br><br>
+　　晚晴园 — 孙中山南洋纪念馆今年将会带来“2023春满人间聚晚晴”新春活动。这个活动将涵盖一系列适合全家出动的精彩节目和活动， 让大家一起度过美好的兔年。
+<br><br>
+　　现场会设有名为“幸福比比兔”的气球艺术装置，作为此次活动的新春装饰。设计师所设计的两只比比森林角色的比比兔，将会以日本达摩不倒翁娃娃的形式呈现在大众眼前！垂耳比比兔身上带有“幸”，立耳比比兔身上则带有“福”，两只可爱的小兔子共同祝贺你在兔年能够幸福美满、平安顺遂！
+<br><br>
+地点：晚晴园 - 孙中山南洋纪念馆 Wan Qing Yuan - Sun Yat Sen Nanyang Memorial Hall
+票价：免费
+时间：2022年12月29日至2023年2月19日，上午10点至晚上7点（星期一闭馆）。
+<br><br>
+2. 环球影城新春活动
+<br><br>
+　　这个兔年，你准备好迎接环球影城园区内的一系列可爱角色了吗？穿着背带裤的小黄人、功夫熊猫里憨憨的大宝，以及怪物史莱克等等经典角色都会在这里等着与你会面！
+<br><br>
+　　漫步在被朵朵梅花装饰过的“好莱坞大道”（Hollywood Boulevard）之上，放眼望去是一片片的粉色。让人尽情沉浸在新春气氛之中，带着愉悦的心情所拍出来的照片，定是人比花娇！
+<br><br>
+　　在1月22日至30日期间，莅临环球影城还能获赠一个幸运红包，红包内含优先通行卡、零售券或者食品券、毛绒玩具等其他礼品，先到先得哦！
+<br><br>
+地点：新加坡环球影城 Universal Studio Singapore
+票价：成人票$88新元起，儿童票$68新元起。
+时间：2023年1月13日至2月5日，早上11点至晚上6点。
+<br><br>
+3. 新加坡华族文化中心 《兔gether》
+<br><br>
+　　天台花园上可爱的兔仔装置供你打卡留念。（取自新加坡华族文化中心脸书）
+新加坡华族文化中心天台花园早早地布置上了兔年艺术装置。通过装置不但能够了解本地华人新年的传统习俗，在特定时间还能观赏围绕着兔仔新年趣事所展开的《兔gether》灯光秀。
+<br><br>
+　　从2022年12月18日至2023年2月5日，公众也能够去往新加坡华族文化中心一楼的接待处，免费领取《兔gether》艺术家所特别设计的兔年红包封。数量有限，先到先得！
+<br><br>
+地点：新加坡华族文化中心天台花园 SCCC Roof Garden
+票价：免费
+时间：2022 年12月 18 日至2023 年3月 31日，早上10点至晚上10点。
+灯光秀：1月7日、1月14日、1月28日、2月25日和3月25日，晚上7点30分至8点30分。
+<br><br>
+4. 牛车水“福兔全家福”
+<br><br>
+　　牛车水于1月3日正式亮灯，暖色调的灯光显得分外喜庆。在克罗士街上段和新桥路交界处的“福兔全家福”不失为牛车水兔年的一大亮点，10米高的全家福作为今年的主灯饰，小兔子携着“一家老小”齐齐向您恭贺新禧！
+<br><br>
+　　除此之外，你也能在这一带的新桥路、桥南路、余东璇街和克罗士街上段看到其他各种各样的兔年灯饰。
+</p>
+</div>
+  <br><br>
+  
+<button onclick="openWin()" class="submit">开始测验</button>
+
+<script>
+let myWindow;
+
+function openWin() {
+  myWindow = window.open("/AceChinese/news/set004/question004.html", "", "width=800,height=800");
+}
+
+</script>
+<br>
+<br>
+<br>
+</body>
+</html>
