@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aceclez.github.io/AceChinese/remove-inspect.js"></script>				<!--PREVENT INSPECT-->
+<title>AceChinese</title>										<!--TO BE UPDATED IN EVERY PAGE-->
+<!-- add icon link -->										        <!--TO BE UPDATED IN EVERY PAGE-->
+<link rel = "icon" href = "https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" type = "image/x-icon">	
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #b3d9ff;
+}
+.wrapper {
+  width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+#quiz {
+  background-color: #ffcccc;
+  padding-bottom: 60px;
+  width: 100%;
+  border-radius: 2%;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+p {
+  font-size: 20px;
+  font-size: 1.5vw;
+  
+}
+input {
+  font-size: 20px;
+  font-size: 1.5vw;
+}
+button {
+  border-radius: 25px;
+  height: 30px;
+}
+.blank {
+  text-decoration: underline;
+}
+.blank::selection {
+  text-decoration-color: black;
+}
+
+.head{
+  font-size: 2.5vw;
+}
+.option {
+  background-color: beige;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.btn-group {
+  margin-top: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ffa64d;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ig:link{
+  color: white;
+}
+
+.ig:visited {
+  color: whitesmoke;
+}
+
+.end{
+  padding: 0px 50px 0px 50px
+}
+
+#quiz > h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 20px;
+}
+ 
+
+.questions {
+  font-size: 28px;
+  font-weight: 700;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 20px;
+}
+
+.answers div {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+
+.answers div:hover {
+  cursor: pointer;
+  color: #FBCB43;
+}
+
+.answers {
+  padding: 0px 0 10px 0px;
+}
+
+.answers div {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.answers div:first-child {
+  border: none;
+}
+
+.checker {
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.correct, .false {
+  background-color: #109D59;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.false {
+  background-color: #DC4437;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container clearfix"></div>
+  <header>
+  <div class="wrapper">
+    <div id="quiz">
+      <h1>阅读练习</h1>
+
+      <p class="questions"></p>
+      
+      <div class="answers"></div>         
+      
+      <div class="checkAnswers">
+<h3>测试结果</h3>
+        <div class="checker">
+
+  </header>
+  
+<!-- delaration of variables-->
+<script>
+window.onload = function () {
+  
+var questionArea = document.getElementsByClassName('questions')[0],
+	answerArea   = document.getElementsByClassName('answers')[0],
+	checker      = document.getElementsByClassName('checker')[0],
+	current      = 0,
+	score		   = 0,
+  
+//questions and options to be stored here
+allQuestions = {
+//set answer at the last number 
+//0=option1
+//1=option2
+//2=option3
+//3=option4
+//sample question
+'以新加坡华族文化中心 《兔gether》的举办地点在哪里' : ['新加坡星耀樟宜机场', '晚晴园 - 孙中山南洋纪念馆 Wan Qing Yuan - Sun Yat Sen Nanyang Memorial Hall', '新加坡环球影城 Universal Studio Singapore', '新加坡华族文化中心天台花园 SCCC Roof Garden',3],
+//question break
+'　在1月22日至30日期间，莅临环球影城可以获得什么？' : ['幸运红包', '糖果', '冰淇凌', '果汁',0],
+//question break
+'以下那个活动的门票需要收费' : ['晚晴园“2023春满人间聚晚晴”', '环球影城新春活动','新加坡华族文化中心 《兔gether》',1],
+//question break
+'好莱坞大道的英文名是（Hollywood Boulevard)' : ['是', '否',0],
+};
+
+//load question in question area   
+function loadQuestion(curr) {
+
+var question = Object.keys(allQuestions)[curr];
+    questionArea.innerHTML = '';
+    questionArea.innerHTML = question;    
+    }
+
+//loads answers in answer area
+function loadAnswers(curr) {
+
+var answers = allQuestions[Object.keys(allQuestions)[curr]];
+    answerArea.innerHTML = '';
+
+//display colour for answer check (red for wrong and green for correct)
+for (var i = 0; i < answers.length -1; i += 1) {
+var createDiv = document.createElement('div'),
+	text = document.createTextNode(answers[i]);
+      
+		createDiv.appendChild(text);      
+		createDiv.addEventListener("click", checkAnswer(i, answers));
+
+		answerArea.appendChild(createDiv);
+    }
+  }
+  
+//check answer
+function checkAnswer(i, arr) {
+    
+return function () {
+	var givenAnswer = i,
+	correctAnswer = arr[arr.length-1];
+
+if (givenAnswer === correctAnswer) {
+	addChecker(true);             
+} else {
+	addChecker(false);                        
+	}
+    
+//explaination of answers in each question
+var popupstore = 
+'<h2>答案解析</h2>'                                        +
+'<h4>第一题： 地点：新加坡华族文化中心天台花园 SCCC Roof Garden。</h4>'  
+ +
+'<h4>第二题： 在1月22日至30日期间，莅临环球影城还能获赠一个幸运红包，红包内含优先通行卡、零售券或者食品券、毛绒玩具等其他礼品，先到先得哦！</h4>' 
+ +
+'<h4>第三题： 票价：成人票$88新元起，儿童票$68新元起。</h4>'  +
+
+'<h4>第四题： 　漫步在被朵朵梅花装饰过的“好莱坞大道”（Hollywood Boulevard）之上，放眼望去是一片片的粉色。</h4>'; /*+
+'<h4>请在IG OUR ACCOUNT NAME或者<a class="ig" href="www.instagram.com">点击这里</a>支持我们，参与更多有趣的活动</h4>'                    ;*///not needed as of now
+          
+//provide different remarks for differnet score
+if (score < 26) {
+	var greetings = "加油!再接再厉!"
+	}  else if (25 < score && score < 51) {
+	var greetings = "真不错，还可以继续加油哟！"
+	} else if (50 < score && score < 76){
+	var greetings = "真棒！继续努力，满分距你一步之遥！"
+	} else {
+	var greetings = "神一般的存在！在下佩服！"
+	}
+
+      if (current < Object.keys(allQuestions).length -1) {
+        current += 1;
+        
+        loadQuestion(current);
+        loadAnswers(current);
+      } else {
+      var declarescore = `总分:${score}/100 ${greetings}`;
+      questionArea.innerHTML = declarescore
+        answerArea.innerHTML = popupstore;
+      }
+                              
+    };
+  }
+  
+    function addChecker(bool) {
+
+    var createDiv = document.createElement('div'),
+        txt       = document.createTextNode(current + 1);
+    
+    createDiv.appendChild(txt);
+    
+    if (bool) {
+      
+      createDiv.className += 'correct';
+      checker.appendChild(createDiv);
+      score += 25;
+
+    } else {
+      createDiv.className += 'false';
+      checker.appendChild(createDiv);
+      score += 0;
+
+    }
+  }
+      
+
+  
+  loadQuestion(current);
+  loadAnswers(current);
+  
+};
+
+</script>
+
+<br>
+<br>
+
+
+</body>
+
+</html>
