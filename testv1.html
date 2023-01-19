@@ -1,0 +1,340 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<html lang="zh-Hant">
+<head>
+<!--CREATED BY SUNNY-->
+<!--ALL RIGHTS SERVED-->
+<!--ANY ATTEMPT TO COPY OR DELETE ANY NOTES THROUGHOUT THE SCRIPT WILL BE SEEN AS AN ACT OF PLAGARISM-->
+<!--V6.2.0-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--IMPORT ICONIFY-->
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+<script src="https://aceclez.github.io/AceChinese/remove-inspect.js"></script>				<!--PREVENT INSPECT-->
+<title>AceChinese</title>										<!--TO BE UPDATED IN EVERY PAGE-->
+<!-- add icon link -->										        <!--TO BE UPDATED IN EVERY PAGE-->
+<link rel = "icon" href = "https://i.ibb.co/6trtbV0/Logo-ace-chinese-V2.png" type = "image/x-icon">	<!--TO BE UPDATED IN EVERY PAGE-->
+
+<style>
+/*css and stuff here*/
+/*nav bar background colour black*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #A9A9A9;
+  color: black;
+}
+
+/*current location colour grey*/
+.topnav a.active {
+  background-color: #808080; 
+  color: white;
+}
+
+body {
+  background-color: #87CEEB;
+  height: 100%;
+  margin: 0;
+  /*font-family: Arial*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+img {
+  opacity: 0.95;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /*side nav colour*/
+  background-color: #004764;
+  overflow-x: hidden;
+  transition: 1.5s;
+  padding-top: 60px;
+}
+
+.sidenav p {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #B6B6B6;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav p:hover {
+  color: #f1f1f1;
+}
+
+.topnav-right {
+  float: right;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+div.fixed {
+  position: fixed;
+  z-index: 999999999999999999999999999999;
+    bottom: 8%;
+  left: 3%;
+}
+
+div.fixed:hover {
+  transform: scale(1.2);
+  cursor: pointer; 
+-webkit-transition-property: all; 
+-webkit-transition-duration: 0.3s; 
+-webkit-transition-timing-function: linear; 
+}
+
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+
+</style>
+
+
+</head>
+<body onload="openNav()">
+
+<!-- TOP NAV BAR -->
+<div class="topnav">
+<div class="topnav-right">
+  <!-- REDIRECT 主页 -->
+  <a class="active" href="/AceChinese/dashboard.html"><iconify-icon icon="bx:home"></iconify-icon> 主页</a> 
+
+  <!-- REDIRECT 成长之树 -->
+  <a href="/AceChinese/404.html"><iconify-icon icon="fluent:tree-evergreen-20-regular"></iconify-icon> 成长之树</a> 
+
+  <!-- REDIRECT 作业< -->
+  <a href="/AceChinese/daily-challenge.html"><iconify-icon icon="ic:outline-library-books"></iconify-icon> 每日挑战</a>
+
+  <!-- REDIRECT 丝绸之路 -->
+  <a href="/AceChinese/compo.html"><iconify-icon icon="clarity:new-line"></iconify-icon> 作文好词帮</a>
+
+  <!-- REDIRECT 关于我们 -->
+  <a href="/AceChinese/aboutus.html"><iconify-icon icon="akar-icons:people-group"></iconify-icon> 关于我们</a> 
+
+</div>
+</div>
+<!-- END OF TOP NAV BAR -->
+<div id="mySidenav" class="sidenav">
+  <p><iconify-icon height= "100px" icon="iconoir:profile-circled"></iconify-icon></p>
+  <p>欢迎用户 </p> <!--NAME TO BE ESTRACTED FROM DATABASE--> 
+  <p>书到用时方恨少，学富五车不为多</p>
+  <p>如需要帮助，请联系</p>
+  <p>acechineseoffical@gmail.com</p>
+  <div class="fixed">
+<img src="https://i.ibb.co/WzndYVY/help-desk.png" height="50%" width="50%" onclick="myFunction()">
+</div>
+<div id="myDIV">
+This is my DIV element.
+</div>
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<style>
+.thumbnail { 
+top:-50px; 
+left:-35px; 
+display:block; 
+z-index:999; 
+cursor: pointer; 
+-webkit-transition-property: all; 
+-webkit-transition-duration: 0.3s; 
+-webkit-transition-timing-function: ease; 
+} 
+
+/*change the number below to scale to the appropriate size*/ 
+.thumbnail:hover { 
+transform: scale(1.1); 
+
+}
+</style>
+<br><br><br><br><table border="0">
+
+<!-- INSERT "成长之树" HERE -->
+	<tbody><tr>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+		<!--<td rowspan="3"><a href="/AceChinese/level-selection.html"><img src="https://i.ibb.co/Xy2ympF/image.png" width="400" height="500" class="thumbnail"></a></td>-->
+		<td rowspan="3"><a href="/AceChinese/404.html"><img src="https://i.ibb.co/Xy2ympF/image.png" width="400" height="500" class="thumbnail"></a></td>
+		<td rowspan="3"></td>
+		<td rowspan="3"></td>
+        <td rowspan="3"></td>
+	</tr>
+
+<!-- INSERT "作业" HERE -->
+	<tr>
+		<td><a href="/AceChinese/daily-challenge.html"><img src="https://i.ibb.co/N3B2qYf/1.png" width="250" height="250" class="thumbnail"></a></td>
+        <td></td>
+        <td></td>
+		<td><a href="/AceChinese/games/game-selection.html"><img src="https://i.ibb.co/ryLcFT9/image.png" width="250" height="250" class="thumbnail"></a></td>
+		<td><a href="/AceChinese/404.html"><img src="https://i.ibb.co/Lx4WKr0/image.png" width="250" height="250" class="thumbnail"></a></td>
+		<td><a href="/AceChinese/404.html"><img src="https://i.ibb.co/372NqCV/image.png" width="250" height="250" class="thumbnail"></a></td>
+
+
+
+	</tr>
+
+<!-- INSERT "丝绸之路" HERE -->
+	<tr>
+
+		<td><a href="/AceChinese/compo.html"><img src="https://i.ibb.co/xmDkvXj/image.png" width="250" height="250" class="thumbnail"></a></td>
+                <td></td>
+        <td></td>
+		<td><a href="/AceChinese/exam-papers.html"><img src="https://i.ibb.co/qDZywJ0/1.png" width="250" height="250" class="thumbnail"></td>
+		<td><a href="/AceChinese/news.html"><img src="https://i.ibb.co/9HHm1kc/image.png" width="250" height="250" class="thumbnail"></td>
+		<td><a href="/AceChinese/404.html"><img src="https://i.ibb.co/b6wrYB4/final.png" width="250" height="250" class="thumbnail"></td>	
+
+
+	</tr>
+
+
+
+
+
+</table>
+<br>
+<br>
+<br>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "280px";
+}
+</script>
+
+
+</body>
+</html>
