@@ -309,7 +309,7 @@ body {
         <form>
        <div class="form-container">
              <input type="text" name="username" placeholder="用户名" class="form-input username" id="myInput">
-             <input type="password" name="password" placeholder="密码" class="form-input password" id="myInput">
+             <input type="password" name="password" placeholder="密码" class="form-input password" id="myInputV2">
              
     <!-- submit button section -->
       <input onClick="change()" type="button" class="form-button" value="登录账号" id="myBtn">
@@ -322,6 +322,14 @@ body {
  <script>
  var input = document.getElementById("myInput");
 input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+  
+   var inputV2 = document.getElementById("myInputV2");
+inputV2.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("myBtn").click();
