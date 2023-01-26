@@ -22,7 +22,7 @@ function change(){
   var y = document.querySelector(".password").value;
            
 
-          if(x=="sunny" && y=="12345"){
+          if(x=="sunny" || x=="HCI-2023" && y=="12345"){
           		popup();
                 setTimeout(login, 2000);
           }
